@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HG VISION - Assessoria em documentação</title>
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+      background: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .form-container {
+      background: #fff;
+      margin: 20px auto;
+      width: 90%;
+    }
+
+    hr {
+      border-top: 2px solid #00ab90;
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 300px;
+    }
+
+    .title {
+      width: 70%;
+    }
+
+    .title h1 {
+      font-size: 40px;
+    }
+
+    .title p {
+      font-size: 25px;
+    }
+
+    .picture {
+      width: 250px;
+      height: 300px;
+      border: 3px solid #A6A6A6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #EEEFEF;
+    }
+
+    .input-picture {
+      display: none;
+    }
+
+    .picture-img {
+      max-width: 240px;
+      max-height: 290px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    .form-section {
+      padding: 20px;
+      border: 1px solid #00ab90;
+      border-radius: 10px;
+      margin: 50px 0px;
+      background: #EEEFEF;
+    }
+
+    .form-section h3 {
+      text-align: center;
+      color: #00ab90;
+      font-size: 25px;
+      text-align: left;
+    }
+
+    .form-section .question .question-inline {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .form-section .question .question-inline .input-container + .input-container{
+      margin-left: 50px;
+    }
+
+    .form-section .question .title {
+      font-size: 20px;
+      margin: 20px 0 10px;
+    }
+
+    .form-section .question .input-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .form-section .question .input-container p {
+      font-size: 20px;
+      margin: 0 20px 0 0;
+      white-space: nowrap;
+    }
+
+    .form-section .question .input-container input {
+      border: 1px solid #00ab90;
+      width: 100%;
+      font-size: 20px;
+      height: 40px;
+      text-transform: uppercase;
+      margin: 5px 0;
+      background: #fff;
+    }
+
+    .form-section .question .radio-buttons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .form-section .question .radio-buttons.type-visa {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .form-section .question .radio-buttons .option {
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+      white-space: nowrap;
+    }
+
+    .form-section .question .radio-buttons .option input {
+      display: none;
+    }
+
+    .form-section .question .radio-buttons .option .custom-radio {
+      content: '';
+      width: 23px;
+      height: 23px;
+      background: #fff;
+      border: 2px solid #00ab90;
+      padding: 3px;
+    }
+ 
+    .form-section .question .radio-buttons .option input[type='radio']:checked + label {
+      background: #000;
+    }
+
+    .form-section .question .radio-buttons .option span {
+      font-size: 20px;
+      margin-left: 10px;
+      white-space: pre-wrap;
+    }
+
+    .form-section .question .radio-buttons .sub-option {
+      margin: 20px 0px 20px 80px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .submit {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form input[type="submit"] {
+      width: 300px;
+      height: 45px;
+      margin: 0px auto 50px;
+      border-radius: 25px;
+      border: 0;
+      background: #00ab90;
+      color: #EEEFEF;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 1060px) {
+      .form-section .question .input-container p {
+        white-space: normal;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .title {
+        width: 90%;
+      }
+
+      .form-section .question .question-inline .input-container + .input-container{
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <form class="form-container">
+    <div>
+      <img src="./assets/logo.png" alt="Logo da China Vistos" class="logo">
+      <hr>
+      <div class="header">
+        <div class="title">
+          <h1>Formulário de pedido de visto da República Popular da China</h1>
+          <p>
+            O candidato deve preencher este formulário de forma completa, completa e clara. Por
+            favor, digite as respostas em letra maiúscula em português no espaço fornecido ou marque
+            a caixa relevante para selecionar. Se algum de os itens não se aplicam, digite N / A ou
+            Nenhum.
+          </p>
+        </div>
+        <label class="picture" tabindex="0" for="input-picture">
+          <span class="image">
+            <img src="./assets/img.png" alt="Ícone de imagem" class="picture-img" id="picture-img">
+          </span>
+        </label>
+        <input type="file" accept="image/*" class="input-picture" id="input-picture" name="input-picture" required>
+      </div>
+      <hr>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; INFORMAÇÕES PESSOAIS</h3>
+      <div class="question">
+        <h6 class="title">1.1 Nome</h6>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nome</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Sobrenome</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Nome de solteira</p>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">1.2 Data de nascimento (yyyy.dd.mm)</h6>
+        <div class="input-container">
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">1.3. Gênero</h6>
+        <div class="input-container radio-buttons">
+          <div class="option">
+            <input type="radio" id="masculino" name="genero" value="Masculino">
+            <label for="masculino" class="custom-radio"></label>
+            <span>Masculino</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="feminino" name="genero" value="Feminino">
+            <label for="feminino" class="custom-radio"></label>
+            <span>Feminino</span>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">1.4. Local de nasc.</h6>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Pais ou Região</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Provincia/ Estado</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Cidade</p>
+            <input type="text" required>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">1.5. Estado Civil</h6>
+        <div class="input-container radio-buttons">
+          <div class="option">
+            <input type="radio" id="casado" name="estado-civil" value="Casado">
+            <label for="casado" class="custom-radio"></label>
+            <span>Casado</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="solteiro" name="estado-civil" value="Solteiro">
+            <label for="solteiro" class="custom-radio"></label>
+            <span>Solteiro</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="divorciado" name="estado-civil" value="Divorciado">
+            <label for="divorciado" class="custom-radio"></label>
+            <span>Divorciado</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="viuvo" name="estado-civil" value="Viúvo">
+            <label for="viuvo" class="custom-radio"></label>
+            <span>Viúvo</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="outros-estado-civil" name="estado-civil" value="Outros">
+            <label for="outros-estado-civil" class="custom-radio"></label>
+            <span>Outros</span>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">1.6. Nacionalidade e residência permanente</h6>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nacionalidade</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Outras nacionalidades</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Número de passaportes de outras nacionalidade</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Nacionalidades anteriores</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Número do RG</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Número do RNE (Para estrangeiros)</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Outros países ou regiões de residência</p>
+          <input type="text" required>
+        </div>
+        <p>Forneça as seguintes informações se você já teve nacionalidade chinesa:</p>
+        <div class="input-container">
+          <p>Nome chinês (em chinês)</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Antigo número de ID chines</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Número da sua última senha chinesa</p>
+            <input type="text" required>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">1.7. Passaporte</h6>
+        <div class="input-container radio-buttons">
+          <div class="option">
+            <input type="radio" id="diplomatico" name="passaporte" value="Diplomatico">
+            <label for="diplomatico" class="custom-radio"></label>
+            <span>Diplomatico</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="oficial" name="passaporte" value="Oficial">
+            <label for="oficial" class="custom-radio"></label>
+            <span>Oficial</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="comum" name="passaporte" value="Comum">
+            <label for="comum" class="custom-radio"></label>
+            <span>Comum</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="servico" name="passaporte" value="Serviço">
+            <label for="servico" class="custom-radio"></label>
+            <span>Serviço</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="especial" name="passaporte" value="Especial">
+            <label for="especial" class="custom-radio"></label>
+            <span>Especial</span>
+          </div>
+          <div class="option">
+            <input type="radio" id="outros-passaporte" name="passaporte" value="Outros">
+            <label for="outros-passaporte" class="custom-radio"></label>
+            <span>Outros (Especifique):</span>
+          </div>
+          <input type="text">
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Passaporte / Número do documento</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>País ou região emissora</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Local de emissão</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Autoridade emissor</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data de emissão (dd-mm-yyyy)</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data expiração (dd-mm-yyyy)</p>
+            <input type="text" required>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">1.8 Passaporte / documento de viagem perdido / roubado</h6>
+        <div class="input-container">
+          <p>Você já perdeu um passaporte / ou foi roubado?</p>
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="sim-passaporte" name="passaporte-roubo" value="Sim">
+              <label for="sim-passaporte" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="nao-passaporte" name="passaporte-roubo" value="Não">
+              <label for="nao-passaporte" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Em caso afirmativo, qual foi o número do documento perdido ou roubado? Se houver mais de um, liste</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>País / região emissora e autoridade do documento perdido ou roubado. Se houver mais de um, liste:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Onde você perdeu ou roubou?</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Quando você perdeu ou roubou?</p>
+            <input type="text" required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; TIPO DE VISTOS</h3>
+      <div class="question">
+        <h6 class="title">2.1 Tipo de visto e principal objetivo de sua visita à China</h6>
+        <div class="input-container radio-buttons type-visa">
+          <div>
+            <div class="option">
+              <input type="radio" id="turismo" name="tipo-visto" value="(L) Turismo">
+              <label for="turismo" class="custom-radio"></label>
+              <span>(L) Turismo</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="turista-independente" name="visto-turismo" value="(A) Um turista independente">
+                <label for="turista-independente" class="custom-radio"></label>
+                <span>(A) Um turista independente</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="membro-grupo" name="visto-turismo" value="(B) Membro de grupo">
+                <label for="membro-grupo" class="custom-radio"></label>
+                <span>(B) Membro de grupo</span>
+              </div>
+            </div>
+            <p>Se escolher B, Por Favor informe</p>
+            <div class="question-inline">
+              <div class="input-container">
+                <p>Agência de viagens na China</p>
+                <input type="text" required>
+              </div>
+              <div class="input-container">
+                <p>Licença de agência de viagens nº</p>
+                <input type="text" required>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="atividade-comercial" name="tipo-visto" value="(M) Atividades de comércio comercial">
+              <label for="atividade-comercial" class="custom-radio"></label>
+              <span>(M) Atividades de comércio comercial</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="comercio" name="visto-comercio" value="(A) Comercio">
+                <label for="comercio" class="custom-radio"></label>
+                <span>(A) Comercio</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="participacao-competicao" name="visto-comercio" value="(B) Participação de competição">
+                <label for="participacao-competicao" class="custom-radio"></label>
+                <span>(B) Participação de competição</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="outras-atividades-comerciais" name="visto-comercio" value="(C) Outras atividades comerciais">
+                <label for="outras-atividades-comerciais" class="custom-radio"></label>
+                <span>(C) Outras atividades comerciais</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="intercambio-visita" name="tipo-visto" value="(F) Intercâmbios, visitas, viagens de estudo ou outras atividades relevantes">
+              <label for="intercambio-visita" class="custom-radio"></label>
+              <span>(F) Intercâmbios, visitas, viagens de estudo ou outras atividades relevantes</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="intercambio" name="visto-intercambio" value="(A) Irtercâmbio">
+                <label for="intercambio" class="custom-radio"></label>
+                <span>(A) Irtercâmbio</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="intercambio-cultural" name="visto-intercambio" value="(B) Intercâmbio Cultural">
+                <label for="intercambio-cultural" class="custom-radio"></label>
+                <span>(B) Intercâmbio Cultural</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="intercambio-reliosos" name="visto-intercambio" value="(C) Intercâmbio Reliosos">
+                <label for="intercambio-reliosos" class="custom-radio"></label>
+                <span>(C) Intercâmbio Reliosos</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="atividades-ongs" name="visto-intercambio" value="(D) Atividades de ONGs">
+                <label for="atividades-ongs" class="custom-radio"></label>
+                <span>(D) Atividades de ONGs</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="intercambio-voluntario" name="visto-intercambio" value="(E) Voluntario (Menos de 90 dias)">
+                <label for="intercambio-voluntario" class="custom-radio"></label>
+                <span>(E) Voluntario (Menos de 90 dias)</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="especialista-estrangeiro" name="visto-intercambio" value="(F) Especialista estrangeiro com pré-aprovado cartas de convite">
+                <label for="especialista-estrangeiro" class="custom-radio"></label>
+                <span>(F) Especialista estrangeiro com pré-aprovado cartas de convite</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="levantamento-geografico" name="visto-intercambio" value="(G) Atividades de levantamento geográfico e mapeamento">
+                <label for="levantamento-geografico" class="custom-radio"></label>
+                <span>(G) Atividades de levantamento geográfico e mapeamento</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="membro-familia-parente" name="tipo-visto" value="(Q1, Q2) Membro da família ou parente de cidadão chinês, ou estrangeiro status de residência permanente na China">
+              <label for="membro-familia-parente" class="custom-radio"></label>
+              <span>(Q1, Q2) Membro da família ou parente de cidadão chinês, ou estrangeiro status de residência permanente na China</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="membro-familia" name="visto-membro-familia-parente" value="(A) Um membro da família o cidadão chinês solicitando residência na China para reunião familiar">
+                <label for="membro-familia" class="custom-radio"></label>
+                <span>(A) Um membro da família o cidadão chinês solicitando residência na China para reunião familiar</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="membro-familia-estrangeiro" name="visto-membro-familia-parente" value="(B) Membro da família de estrangeiro (s) com status de residência permanente na China que está solicitando residência na China para reunião familiar">
+                <label for="membro-familia-estrangeiro" class="custom-radio"></label>
+                <span>(B) Membro da família de estrangeiro (s) com status de residência permanente na China que está solicitando residência na China para reunião familiar</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="residencia-c" name="visto-membro-familia-parente" value="(C) Visto de residência C para criança a ser adotada na China">
+                <label for="residencia-c" class="custom-radio"></label>
+                <span>(C) Visto de residência C para criança a ser adotada na China</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="parente-cidadao" name="visto-membro-familia-parente" value="(D) Parente de cidadão chinês (s) que mora na China e está solicitando um visto de visita por menos de 180 dia">
+                <label for="parente-cidadao" class="custom-radio"></label>
+                <span>(D) Parente de cidadão chinês (s) que mora na China e está solicitando um visto de visita por menos de 180 dia</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="parente-estrangeiro" name="visto-membro-familia-parente" value="(E) Parente de estrangeiro com status de residência permanente na China solicitando um visto para visitar menos de 180 dias">
+                <label for="parente-estrangeiro" class="custom-radio"></label>
+                <span>(E) Parente de estrangeiro com status de residência permanente na China solicitando um visto para visitar menos de 180 dias</span>
+              </div>
+            </div>
+            <p>Por favor, forneça as seguintes informações:</p>
+            <div class="input-container">
+              <p>Nome do (s) cidadão (s) chinês (s) / tutor (es)</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container">
+              <p>Estrangeiro (s) com status de residente permanente</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container">
+              <p>Número (s) de identidade ou de autorização de residência permanente</p>
+              <input type="text" required>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="membro-familia-estrangeiro-residindo" name="tipo-visto" value="(S1, S2) Membro da família ou estrangeiro (s) permanecendo ou residindo na China ou pessoa que precisa vir para a China para assuntos pessoais">
+              <label for="membro-familia-estrangeiro-residindo" class="custom-radio"></label>
+              <span>(S1, S2) Membro da família ou estrangeiro (s) permanecendo ou residindo na China ou pessoa que precisa vir para a China para assuntos pessoais</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="conjuge" name="visto-membro-familia-estrangeiro" value="(A) Cônjugue, pai, mãe, filho menor de 18 anos ou sogro de estrangeiro (s) que residem na China para trabalhar, Estudar ou outros fins que visitam por 180 dias ou mais">
+                <label for="conjuge" class="custom-radio"></label>
+                <span>(A) Cônjugue, pai, mãe, filho menor de 18 anos ou sogro de estrangeiro (s) que residem na China para trabalhar, Estudar ou outros fins que visitam por 180 dias ou mais</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="pessoa-precisa-residir" name="visto-membro-familia-estrangeiro" value="(B) Pessoa que precisa residir na China para outros assuntos pessoais">
+                <label for="pessoa-precisa-residir" class="custom-radio"></label>
+                <span>(B) Pessoa que precisa residir na China para outros assuntos pessoais</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="membro-familia-estrangeiro-reside-china" name="visto-membro-familia-estrangeiro" value="(C) Membro da família de estrangeiro (s) que está (ão) ou residem na China a trabalho, estudo ou outros fins que visitam a China por menos de 180 dias">
+                <label for="membro-familia-estrangeiro-reside-china" class="custom-radio"></label>
+                <span>(C) Membro da família de estrangeiro (s) que está (ão) ou residem na China a trabalho, estudo ou outros fins que visitam a China por menos de 180 dias</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="assuntos-pessoais" name="visto-membro-familia-estrangeiro" value="(D) Solicitação de visto para ficar na China para outros assuntos pessoais, como lidar com litígios, herança, real propriedade ou tratamento médico">
+                <label for="assuntos-pessoais" class="custom-radio"></label>
+                <span>(D) Solicitação de visto para ficar na China para outros assuntos pessoais, como lidar com litígios, herança, real propriedade ou tratamento médico</span>
+              </div>
+            </div>
+            <p>Por favor, forneça as seguintes informações:</p>
+            <div class="input-container">
+              <p>Nome do estrageiro residente</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container">
+              <p>Relacionamento com você</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container">
+              <p>Número da autorização de residência</p>
+              <input type="text" required>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="trabalho" name="tipo-visto" value="(Z) Trabalho">
+              <label for="trabalho" class="custom-radio"></label>
+              <span>(Z) Trabalho</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="especialista-estrangeiro-trabalhando" name="trabalho" value="(A) Especialista estrangeiro trabalhando na China">
+                <label for="especialista-estrangeiro-trabalhando" class="custom-radio"></label>
+                <span>(A) Especialista estrangeiro trabalhando na China</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="desempenho-comercial" name="trabalho" value="(B) Para desempenho comercial">
+                <label for="desempenho-comercial" class="custom-radio"></label>
+                <span>(B) Para desempenho comercial</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="chefe-representante" name="trabalho" value="(C) Chefe representante de uma empresa estrangeira">
+                <label for="chefe-representante" class="custom-radio"></label>
+                <span>(C) Chefe representante de uma empresa estrangeira</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="operacao-petroleo" name="trabalho" value="(D) Operações de petróleo offshore">
+                <label for="operacao-petroleo" class="custom-radio"></label>
+                <span>(D) Operações de petróleo offshore</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="trabalho-voluntario" name="trabalho" value="(E) Voluntário ( mais de 90 dias )">
+                <label for="trabalho-voluntario" class="custom-radio"></label>
+                <span>(E) Voluntário ( mais de 90 dias )</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="estrangeiro-trabalhando" name="trabalho" value="(F) Estrangeiro trabalhando na China com autorização de trabalho emitido pelo governo chinês">
+                <label for="estrangeiro-trabalhando" class="custom-radio"></label>
+                <span>(F) Estrangeiro trabalhando na China com autorização de trabalho emitido pelo governo chinês</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="estudos" name="tipo-visto" value="(X1, X2) Estudos">
+              <label for="estudos" class="custom-radio"></label>
+              <span>(X1, X2) Estudos</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="estudo-longo" name="estudo" value="(A) Estudo longo (mais de 180 dias)">
+                <label for="estudo-longo" class="custom-radio"></label>
+                <span>(A) Estudo longo (mais de 180 dias)</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="estudo-curto" name="estudo" value="(B) Estudo Curto (menos de 180 dias)">
+                <label for="estudo-curto" class="custom-radio"></label>
+                <span>(B) Estudo Curto (menos de 180 dias)</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="jornalistas" name="tipo-visto" value="(J1, J2) Jornalistas">
+              <label for="jornalistas" class="custom-radio"></label>
+              <span>(J1, J2) Jornalistas</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="jornalista-estrangeiro-visita" name="jornalista" value="(A) Jornalista estrangeiro em visita à China para cobertura jornalística de curta duração">
+                <label for="jornalista-estrangeiro-visita" class="custom-radio"></label>
+                <span>(A) Jornalista estrangeiro em visita à China para cobertura jornalística de curta duração</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="jornalista-estrangeiro-escritorio" name="jornalista" value="(B) Jornalista estrangeiro em escritório permanente de agência de notícias estrangeiras na China">
+                <label for="jornalista-estrangeiro-escritorio" class="custom-radio"></label>
+                <span>(B) Jornalista estrangeiro em escritório permanente de agência de notícias estrangeiras na China</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="membro-tripulacao" name="tipo-visto" value="(C) Membro de tripulação">
+              <label for="membro-tripulacao" class="custom-radio"></label>
+              <span>(C) Membro de tripulação</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="tripulacao-trem" name="tripulacao" value="(A) Um membro da tripulação desempenhando funções a bordo de um trem internacional">
+                <label for="tripulacao-trem" class="custom-radio"></label>
+                <span>(A) Um membro da tripulação desempenhando funções a bordo de um trem internacional</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="tripulacao-aeronave" name="tripulacao" value="(B) Membro da tripulação B desempenhando funções a bordo de uma aeronave internacional">
+                <label for="tripulacao-aeronave" class="custom-radio"></label>
+                <span>(B) Membro da tripulação B desempenhando funções a bordo de uma aeronave internacional</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="tripulacao-navio" name="tripulacao" value="(C) Membro da tripulação desempenhando funções a bordo de um navio internacional">
+                <label for="tripulacao-navio" class="custom-radio"></label>
+                <span>(C) Membro da tripulação desempenhando funções a bordo de um navio internacional</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="tripulacao-motorista" name="tripulacao" value="(D) Motorista de veículo envolvido em serviços de transporte internacional">
+                <label for="tripulacao-motorista" class="custom-radio"></label>
+                <span>(D) Motorista de veículo envolvido em serviços de transporte internacional</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="transito" name="tipo-visto" value="(G) Trânsito">
+              <label for="transito" class="custom-radio"></label>
+              <span>(G) Trânsito</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="transito-pela-china" name="transito-china" value="Trânsito pela China">
+                <label for="transito-pela-china" class="custom-radio"></label>
+                <span>Trânsito pela China</span>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <div class="option">
+              <input type="radio" id="residencia" name="tipo-visto" value="(D) Residência permanente">
+              <label for="residencia" class="custom-radio"></label>
+              <span>(D) Residência permanente</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="pessoa-residencia-permanente" name="residencia-permanente" value="Pessoa que vem para a China para estabelecer residência permanente">
+                <label for="pessoa-residencia-permanente" class="custom-radio"></label>
+                <span>Pessoa que vem para a China para estabelecer residência permanente</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">2.2 Serviços</h6>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="servico-normal" name="tipo-servico" value="Normal">
+              <label for="servico-normal" class="custom-radio"></label>
+              <span>Normal</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="servico-expresso" name="tipo-servico" value="Expresso">
+              <label for="servico-expresso" class="custom-radio"></label>
+              <span>Expresso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">2.3 Detalhes do visto</h6>
+        <div class="question-inline">
+          <div class="input-container text-right">
+            <p>Validade do visto</p>
+            <input type="text" required>
+            <p>mese(s)</p>
+          </div>
+          <div class="input-container">
+            <p>Duração máxima das estadias:</p>
+            <input type="text" required>
+            <p>dia(s)</p>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Entries:</p>
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="entries-unico" name="entries" value="Único">
+              <label for="entries-unico" class="custom-radio"></label>
+              <span>Único</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="entries-duas" name="entries" value="Duas">
+              <label for="entries-duas" class="custom-radio"></label>
+              <span>Duas</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="entries-multiplas" name="entries" value="Multiplas">
+              <label for="entries-multiplas" class="custom-radio"></label>
+              <span>Multiplas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; INFORMAÇÕES DE TRABALHO</h3>
+      <div class="question">
+        <h6 class="title">3.1 Ocupação atual</h6>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="ocupacao-empresario" name="ocupacao-atual" value="Empresário">
+              <label for="ocupacao-empresario" class="custom-radio"></label>
+              <span>Empresário</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-funcionario-empresa" name="ocupacao-atual" value="Funcionário de empresa">
+              <label for="ocupacao-funcionario-empresa" class="custom-radio"></label>
+              <span>Funcionário de empresa</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-artista" name="ocupacao-atual" value="Artistas">
+              <label for="ocupacao-artista" class="custom-radio"></label>
+              <span>Artistas</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-industrial" name="ocupacao-atual" value="Trabalho industrial/agrícola">
+              <label for="ocupacao-industrial" class="custom-radio"></label>
+              <span>Trabalho industrial/agrícola</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-aluna" name="ocupacao-atual" value="Aluna">
+              <label for="ocupacao-aluna" class="custom-radio"></label>
+              <span>Aluna</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-membro-parlamento" name="ocupacao-atual" value="Membro do parlamento">
+              <label for="ocupacao-membro-parlamento" class="custom-radio"></label>
+              <span>Membro do parlamento</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-oficial-governo-ongs" name="ocupacao-atual" value="Oficial do Governo ONG">
+              <label for="ocupacao-oficial-governo-ongs" class="custom-radio"></label>
+              <span>Oficial do Governo ONG</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-staff" name="ocupacao-atual" value="Saff">
+              <label for="ocupacao-staff" class="custom-radio"></label>
+              <span>Saff</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-pessoal-militar" name="ocupacao-atual" value="Pessoal Militar">
+              <label for="ocupacao-pessoal-militar" class="custom-radio"></label>
+              <span>Pessoal Militar</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-representante-midia" name="ocupacao-atual" value="Representante de mídia">
+              <label for="ocupacao-representante-midia" class="custom-radio"></label>
+              <span>Representante de mídia</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-membro-tripulacao" name="ocupacao-atual" value="Membro de tripulação">
+              <label for="ocupacao-membro-tripulacao" class="custom-radio"></label>
+              <span>Membro de tripulação</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-trabalhador-autonomo" name="ocupacao-atual" value="Trabalhador autônomo">
+              <label for="ocupacao-trabalhador-autonomo" class="custom-radio"></label>
+              <span>Trabalhador autônomo</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-desempregado" name="ocupacao-atual" value="Desempregado">
+              <label for="ocupacao-desempregado" class="custom-radio"></label>
+              <span>Desempregado</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-aposentado" name="ocupacao-atual" value="Aposentado">
+              <label for="ocupacao-aposentado" class="custom-radio"></label>
+              <span>Aposentado</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="ocupacao-outros" name="ocupacao-atual" value="Outros (especifique):">
+              <label for="ocupacao-outros" class="custom-radio"></label>
+              <span>Outros (especifique):</span>
+            </div>
+            <div class="input-container">
+              <input type="text" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">3.2 Renda Anual:</h6>
+        <div class="input-container">
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">3.3 Experiência de trabalho (lista em ordem cronológica inversa)</h6>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data entrada</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data saída</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Nome, endereço e telefone seus empregadores atuais e anteriores</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Nome do supervisor e Telefone</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Cargo</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Obs:</p>
+          <input type="text" required>
+        </div>
+        <hr>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data entrada</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data saída</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Nome, endereço e telefone seus empregadores atuais e anteriores</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Nome do supervisor e Telefone</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Cargo</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Obs:</p>
+          <input type="text" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; EDUCAÇÃO</h3>
+      <div class="question">
+        <h6 class="title">4.1 Habilidades linguísticas (Nível de conversação)</h6>
+        <div class="input-container">
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">4.2 Educação Últimos realizados</h6>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data a partir</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data fim</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Nome e endereço da instituição</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Diploma / grau</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Curso</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <hr>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data a partir</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data fim</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Nome e endereço da instituição</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Diploma / grau</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Curso</p>
+            <input type="text" required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; INFORMAÇÃO FAMILIAR</h3>
+      <div class="question">
+        <h6 class="title">5.1 Endereço de residência atual</h6>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>País ou Região:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Estado:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Cidade:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>CEP:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço completo:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Número tel::</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Número de celular:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço e-mail:</p>
+          <input type="text" required>
+        </div>
+        <hr>
+        <p>Cônjuge</p>
+        <div class="input-container">
+          <p>Nome:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nacionalidade:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Profissão:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de nasc:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>País de nasc.:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Cidade de Nasc.:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço:</p>
+          <input type="text" required>
+        </div>
+        <hr>
+        <p>Pai</p>
+        <div class="input-container">
+          <p>Nome:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nacionalidade:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Cargo:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de nasc.:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço:</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <p>Seu pai está na China?</p>
+            <div class="option">
+              <input type="radio" id="pai-na-china-sim" name="pai-na-china" value="Sim">
+              <label for="pai-na-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="pai-na-china-nao" name="pai-na-china" value="Não">
+              <label for="pai-na-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <p>Se sim, o status na China</p>
+        <div class="input-container radio-buttons type-visa">
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-pai-cidadao" name="tipo-visto-pai" value="Cidadão">
+              <label for="tipo-visto-pai-cidadao" class="custom-radio"></label>
+              <span>Cidadão</span>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-pai-residente" name="tipo-visto-pai" value="Residente">
+              <label for="tipo-visto-pai-residente" class="custom-radio"></label>
+              <span>Residente</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="pai-residente-trabalho" name="tipos-visto-pai-residente" value="Residente de tipo de trabalho válido por 90 dias a cinco anos">
+                <label for="pai-residente-trabalho" class="custom-radio"></label>
+                <span>Residente de tipo de trabalho válido por 90 dias a cinco anos</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="pai-residente-nao-profissional" name="tipos-visto-pai-residente" value="Residente não profissional válido por 180 dias a cinco anos">
+                <label for="pai-residente-nao-profissional" class="custom-radio"></label>
+                <span>Residente não profissional válido por 180 dias a cinco anos</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-pai-residente-permanente" name="tipo-visto-pai" value="Residência permanente">
+              <label for="tipo-visto-pai-residente-permanente" class="custom-radio"></label>
+              <span>Residência permanente</span>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-pai-temporario" name="tipo-visto-pai" value="Visto">
+              <label for="tipo-visto-pai-temporario" class="custom-radio"></label>
+              <span>Visto</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="tipos-visto-pai-z" name="tipos-visto-pai-temporario" value="Visto Z válido por menos de 90 dias">
+                <label for="tipos-visto-pai-z" class="custom-radio"></label>
+                <span>Visto Z válido por menos de 90 dias</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="tipos-visto-pai-nao-z" name="tipos-visto-pai-temporario" value="Visto diferente de Z válido para menos de 180 dias">
+                <label for="tipos-visto-pai-nao-z" class="custom-radio"></label>
+                <span>Visto diferente de Z válido para menos de 180 dias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p>Mãe</p>
+        <div class="input-container">
+          <p>Nome:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nacionalidade:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Cargo:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de nasc.:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço:</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <p>Sua mãe está na China?</p>
+            <div class="option">
+              <input type="radio" id="mae-na-china-sim" name="mae-na-china" value="Sim">
+              <label for="mae-na-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="mae-na-china-nao" name="mae-na-china" value="Não">
+              <label for="mae-na-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <p>Se sim, o status na China</p>
+        <div class="input-container radio-buttons type-visa">
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-mae-cidadao" name="tipo-visto-mae" value="Cidadão">
+              <label for="tipo-visto-mae-cidadao" class="custom-radio"></label>
+              <span>Cidadão</span>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-mae-residente" name="tipo-visto-mae" value="Residente">
+              <label for="tipo-visto-mae-residente" class="custom-radio"></label>
+              <span>Residente</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="mae-residente-trabalho" name="tipos-visto-mae-residente" value="Residente de tipo de trabalho válido por 90 dias a cinco anos">
+                <label for="mae-residente-trabalho" class="custom-radio"></label>
+                <span>Residente de tipo de trabalho válido por 90 dias a cinco anos</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="mae-residente-nao-profissional" name="tipos-visto-mae-residente" value="Residente não profissional válido por 180 dias a cinco anos">
+                <label for="mae-residente-nao-profissional" class="custom-radio"></label>
+                <span>Residente não profissional válido por 180 dias a cinco anos</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-mae-residente-permanente" name="tipo-visto-mae" value="Residência permanente">
+              <label for="tipo-visto-mae-residente-permanente" class="custom-radio"></label>
+              <span>Residência permanente</span>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-mae-temporario" name="tipo-visto-mae" value="Visto">
+              <label for="tipo-visto-mae-temporario" class="custom-radio"></label>
+              <span>Visto</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="tipos-visto-mae-z" name="tipos-visto-mae-temporario" value="Visto Z válido por menos de 90 dias">
+                <label for="tipos-visto-mae-z" class="custom-radio"></label>
+                <span>Visto Z válido por menos de 90 dias</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="tipos-visto-mae-nao-z" name="tipos-visto-mae-temporario" value="Visto diferente de Z válido para menos de 180 dias">
+                <label for="tipos-visto-mae-nao-z" class="custom-radio"></label>
+                <span>Visto diferente de Z válido para menos de 180 dias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p>Filho</p>
+        <div class="input-container">
+          <p>Nome:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nacionalidade:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Cargo:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de nasc.:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço:</p>
+          <input type="text" required>
+        </div>
+        <hr>
+        <p>Filho</p>
+        <div class="input-container">
+          <p>Nome:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nacionalidade:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Cargo:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de nasc.:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço:</p>
+          <input type="text" required>
+        </div>
+        <hr>
+        <p>Filho</p>
+        <div class="input-container">
+          <p>Nome:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Nacionalidade:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Cargo:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de nasc.:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço:</p>
+          <input type="text" required>
+        </div>
+        <hr>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <p>Você tem parentes próximos, não incluindo pais, na China?</p>
+            <div class="option">
+              <input type="radio" id="parente-proximo-china-sim" name="parente-proximo-china" value="Sim">
+              <label for="parente-proximo-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="parente-proximo-china-nao" name="parente-proximo-china" value="Não">
+              <label for="parente-proximo-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <p>Em caso afirmativo, forneça as seguintes informações</p>
+        <div class="input-container">
+          <p>Nome:</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Relação com você:</p>
+          <input type="text" required>
+        </div>
+        <p>Status na China</p>
+        <div class="input-container radio-buttons type-visa">
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-parente-cidadao" name="tipo-visto-parente" value="Cidadão">
+              <label for="tipo-visto-parente-cidadao" class="custom-radio"></label>
+              <span>Cidadão</span>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-parente-residente" name="tipo-visto-parente" value="Residente">
+              <label for="tipo-visto-parente-residente" class="custom-radio"></label>
+              <span>Residente</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="parente-residente-trabalho" name="tipos-visto-parente-residente" value="Residente de tipo de trabalho válido por 90 dias a cinco anos">
+                <label for="parente-residente-trabalho" class="custom-radio"></label>
+                <span>Residente de tipo de trabalho válido por 90 dias a cinco anos</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="parente-residente-nao-profissional" name="tipos-visto-parente-residente" value="Residente não profissional válido por 180 dias a cinco anos">
+                <label for="parente-residente-nao-profissional" class="custom-radio"></label>
+                <span>Residente não profissional válido por 180 dias a cinco anos</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-parente-residente-permanente" name="tipo-visto-parente" value="Residência permanente">
+              <label for="tipo-visto-parente-residente-permanente" class="custom-radio"></label>
+              <span>Residência permanente</span>
+            </div>
+          </div>
+          <div>
+            <div class="option">
+              <input type="radio" id="tipo-visto-parente-temporario" name="tipo-visto-parente" value="Visto">
+              <label for="tipo-visto-parente-temporario" class="custom-radio"></label>
+              <span>Visto</span>
+            </div>
+            <div class="sub-option">
+              <div class="option">
+                <input type="radio" id="tipos-visto-parente-z" name="tipos-visto-parente-temporario" value="Visto Z válido por menos de 90 dias">
+                <label for="tipos-visto-parente-z" class="custom-radio"></label>
+                <span>Visto Z válido por menos de 90 dias</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="tipos-visto-parente-nao-z" name="tipos-visto-parente-temporario" value="Visto diferente de Z válido para menos de 180 dias">
+                <label for="tipos-visto-parente-nao-z" class="custom-radio"></label>
+                <span>Visto diferente de Z válido para menos de 180 dias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; INFORMAÇÕES SOBRE SUA VIAGEM PRETENDIDA</h3>
+      <div class="question">
+        <h6 class="title">6.1 Itinerário</h6>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data da chegada:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data da partida:</p>
+            <input type="text" required>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">6.2 Empresa convidativa/ pessoa ou organização / hotel ou residência temporária na China</h6>
+        <div class="input-container">
+          <p>Nome da pessoa ou organização:</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Relacionamento com você (se convidado por um indivíduo:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Número de telefone:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Endereço de e-mail:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço (cidade, província / estado, código postal):</p>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">6.3 Contato de emergência</h6>
+        <div class="input-container">
+          <p>Nome da pessoa de contato de emergência:</p>
+          <input type="text" required>
+        </div>
+        <div class="input-container">
+          <p>Relação com você:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Número de telefone:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Endereço de e-mail:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Endereço (cidade, província / estado, código postal):</p>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">6.4 Quem vai pagar sua viagem?</h6>
+        <div class="input-container">
+          <div class="input-container radio-buttons type-visa">
+            <div class="option">
+              <input type="radio" id="pagar-viagem-eu-mesmo" name="pagar-viagem" value="Eu mesmo">
+              <label for="pagar-viagem-eu-mesmo" class="custom-radio"></label>
+              <span>Eu mesmo</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="pagar-viagem-outros" name="pagar-viagem" value="Outros">
+              <label for="pagar-viagem-outros" class="custom-radio"></label>
+              <span>Outros</span>
+            </div>
+            <div class="question-inline">
+              <div class="input-container">
+                <p>Nome:</p>
+                <input type="text" required>
+              </div>
+              <div class="input-container">
+                <p>Telefone:</p>
+                <input type="text" required>
+              </div>
+              <div class="input-container">
+                <p>Email:</p>
+                <input type="text" required>
+              </div>
+            </div>
+            <div class="option">
+              <input type="radio" id="pagar-viagem-empresa" name="pagar-viagem" value="Empresa">
+              <label for="pagar-viagem-empresa" class="custom-radio"></label>
+              <span>Empresa</span>
+            </div>
+            <div class="question-inline">
+              <div class="input-container">
+                <p>Nome:</p>
+                <input type="text" required>
+              </div>
+              <div class="input-container">
+                <p>Relação com você:</p>
+                <input type="text" required>
+              </div>
+            </div>
+            <div class="question-inline">
+              <div class="input-container">
+                <p>Endereço:</p>
+                <input type="text" required>
+              </div>
+              <div class="input-container">
+                <p>País:</p>
+                <input type="text" required>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">6.6 Acompanhante (s) de viagem para esta visita</h6>
+        <div class="input-container">
+          <div class="input-container radio-buttons type-visa">
+            <div class="input-container radio-buttons">
+              <p>Você está viajando com outra pessoa desta vez</p>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-sim" name="viajando-outra-pessoa" value="Sim">
+                <label for="viajando-outra-pessoa-sim" class="custom-radio"></label>
+                <span>Sim</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-nao" name="viajando-outra-pessoa" value="Não">
+                <label for="viajando-outra-pessoa-nao" class="custom-radio"></label>
+                <span>Não</span>
+              </div>
+            </div>
+            <div class="input-container">
+              <p>Nome(s) de viajantes acompanhante(s):</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container radio-buttons">
+              <p>Genero:</p>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-masculino-1" name="viajando-outra-pessoa-genero-1" value="Masculino">
+                <label for="viajando-outra-pessoa-genero-masculino-1" class="custom-radio"></label>
+                <span>Masculino</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-femea-1" name="viajando-outra-pessoa-genero-1" value="Fêmea">
+                <label for="viajando-outra-pessoa-genero-femea-1" class="custom-radio"></label>
+                <span>Fêmea</span>
+              </div>
+            </div>
+            <div class="input-container">
+              <p>Data de nascimento:</p>
+              <input type="text" required>
+            </div>
+            <hr>
+            <div class="input-container">
+              <p>Nome(s) de viajantes acompanhante(s):</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container radio-buttons">
+              <div class="input-container">
+                <p>Genero:</p>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-masculino-2" name="viajando-outra-pessoa-genero-2" value="Masculino">
+                <label for="viajando-outra-pessoa-genero-masculino-2" class="custom-radio"></label>
+                <span>Masculino</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-femea-2" name="viajando-outra-pessoa-genero-2" value="Fêmea">
+                <label for="viajando-outra-pessoa-genero-femea-2" class="custom-radio"></label>
+                <span>Fêmea</span>
+              </div>
+            </div>
+            <div class="input-container">
+              <p>Data de nascimento:</p>
+              <input type="text" required>
+            </div>
+            <hr>
+            <div class="input-container">
+              <p>Nome(s) de viajantes acompanhante(s):</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container radio-buttons">
+              <div class="input-container">
+                <p>Genero:</p>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-masculino-3" name="viajando-outra-pessoa-genero-3" value="Masculino">
+                <label for="viajando-outra-pessoa-genero-masculino-3" class="custom-radio"></label>
+                <span>Masculino</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-femea-3" name="viajando-outra-pessoa-genero-3" value="Fêmea">
+                <label for="viajando-outra-pessoa-genero-femea-3" class="custom-radio"></label>
+                <span>Fêmea</span>
+              </div>
+            </div>
+            <div class="input-container">
+              <p>Data de nascimento:</p>
+              <input type="text" required>
+            </div>
+            <hr>
+            <div class="input-container">
+              <p>Nome(s) de viajantes acompanhante(s):</p>
+              <input type="text" required>
+            </div>
+            <div class="input-container radio-buttons">
+              <div class="input-container">
+                <p>Genero:</p>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-masculino-4" name="viajando-outra-pessoa-genero-4" value="Masculino">
+                <label for="viajando-outra-pessoa-genero-masculino-4" class="custom-radio"></label>
+                <span>Masculino</span>
+              </div>
+              <div class="option">
+                <input type="radio" id="viajando-outra-pessoa-genero-femea-4" name="viajando-outra-pessoa-genero-4" value="Fêmea">
+                <label for="viajando-outra-pessoa-genero-femea-4" class="custom-radio"></label>
+                <span>Fêmea</span>
+              </div>
+            </div>
+            <div class="input-container">
+              <p>Data de nascimento:</p>
+              <input type="text" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; INFORMAÇÕES DE VIAGEM ANTERIORES</h3>
+      <div class="question">
+        <h6 class="title">7.1 Viagem anterior à China nos últimos 3 anos</h6>
+        <p>Você já esteve na China nos últimos 3 anos?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="esteve-china-ultimos-3-meses-sim" name="esteve-china-ultimos-3-meses" value="Sim">
+              <label for="esteve-china-ultimos-3-meses-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="esteve-china-ultimos-3-meses-nao" name="esteve-china-ultimos-3-meses" value="Não">
+              <label for="esteve-china-ultimos-3-meses-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Cidades visitadas:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data de chegada:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de partida:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <hr>
+        <div class="input-container">
+          <p>Cidades visitadas:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data de chegada:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de partida:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <hr>
+        <div class="input-container">
+          <p>Cidades visitadas:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data de chegada:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de partida:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <hr>
+        <div class="input-container">
+          <p>Cidades visitadas:</p>
+          <input type="text" required>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data de chegada:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de partida:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <p>Você já possui um visto Chinês?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="possui-visto-chines-sim" name="possui-visto-chines" value="Sim">
+              <label for="possui-visto-chines-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="possui-visto-chines-nao" name="possui-visto-chines" value="Não">
+              <label for="possui-visto-chines-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <p>Em caso afirmativo, forneça detalhes de seu último visto chinês</p>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Tipo de visto:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Número do visto:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Local de emissão:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data de emissão:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <p>Você já tirou impressões digitais ao solicitar um visto chinês?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="impressao-digital-sim" name="impressao-digital" value="Sim">
+              <label for="impressao-digital-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="impressao-digital-nao" name="impressao-digital" value="Não">
+              <label for="impressao-digital-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <p>Você já recebeu uma autorização de residência na China?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="autorizacao-residencia-china-sim" name="autorizacao-residencia-china" value="Sim">
+              <label for="autorizacao-residencia-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="autorizacao-residencia-china-nao" name="autorizacao-residencia-china" value="Não">
+              <label for="autorizacao-residencia-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Em caso afirmativo, forneça o número da sua autorização de residência:</p>
+          <input type="text" required>
+        </div>
+        <p>Você já perdeu um visto chinês ou teve um roubado?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="perdeu-roubado-visto-chines-sim" name="perdeu-roubado-visto-chines" value="Sim">
+              <label for="perdeu-roubado-visto-chines-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="perdeu-roubado-visto-chines-nao" name="perdeu-roubado-visto-chines" value="Não">
+              <label for="perdeu-roubado-visto-chines-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <p>Em caso afirmativo, forneça as seguintes informações:</p>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Onde você perdeu ou roubado?</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Quando você perdeu ou roubado?</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Qual foi o número do visto perdido ou roubado?</p>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">7.3 Vistos válidos</h6>
+        <p>Você atualmente possui algum visto válido emitido por outros países?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="visto-valido-outros-paises-sim" name="visto-valido-outros-paises" value="Sim">
+              <label for="visto-valido-outros-paises-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="visto-valido-outros-paises-nao" name="visto-valido-outros-paises" value="Não">
+              <label for="visto-valido-outros-paises-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, liste abaixo:</p>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">7.4 Países visitados nos últimos 5 anos</h6>
+        <p>Você viajou para algum outro país nos últimos 5 anos?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="viajou-outros-paises-sim" name="viajou-outros-paises" value="Sim">
+              <label for="viajou-outros-paises-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="viajou-outros-paises-nao" name="viajou-outros-paises" value="Não">
+              <label for="viajou-outros-paises-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, liste abaixo:</p>
+          <input type="text" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>&#10142; OUTRAS INFORMAÇÕES</h3>
+      <div class="question">
+        <p>Você já teve um visto recusado para a China ou sua entrada na China foi recusada?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="visto-recusado-china-sim" name="visto-recusado-china" value="Sim">
+              <label for="visto-recusado-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="visto-recusado-china-nao" name="visto-recusado-china" value="Não">
+              <label for="visto-recusado-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+        <p>Seu visto chinês já foi cancelado?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="visto-cancelado-china-sim" name="visto-cancelado-china" value="Sim">
+              <label for="visto-cancelado-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="visto-cancelado-china-nao" name="visto-cancelado-china" value="Não">
+              <label for="visto-cancelado-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+        <p>Você já entrou na China ilegalmente, permaneceu na China ou trabalhou ilegalmente?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="entrou-ilegalmente-china-sim" name="entrou-ilegalmente-china" value="Sim">
+              <label for="entrou-ilegalmente-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="entrou-ilegalmente-china-nao" name="entrou-ilegalmente-china" value="Não">
+              <label for="entrou-ilegalmente-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+        <p>Você tem antecedentes criminais na China ou em qualquer outro país?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="antecedentes-criminais-china-sim" name="antecedentes-criminais-china" value="Sim">
+              <label for="antecedentes-criminais-china-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="antecedentes-criminais-china-nao" name="antecedentes-criminais-china" value="Não">
+              <label for="antecedentes-criminais-china-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+        <p>Você tem algum transtorno mental grave ou doença infecciosa?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="transtorno-mental-sim" name="transtorno-mental" value="Sim">
+              <label for="transtorno-mental-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="transtorno-mental-nao" name="transtorno-mental" value="Não">
+              <label for="transtorno-mental-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+        <p>Você já visitou países ou territórios onde há uma epidemia nos últimos 30 dias?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="visitou-paises-pandemia-sim" name="visitou-paises-pandemia" value="Sim">
+              <label for="visitou-paises-pandemia-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="visitou-paises-pandemia-nao" name="visitou-paises-pandemia" value="Não">
+              <label for="visitou-paises-pandemia-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+        <p>Você já foi treinado ou tem alguma habilidade especial no campo de armas de fogo, explosivos, dispositivos nucleares, produtos biológicos ou químicos</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="treinamento-armas-sim" name="treinamento-armas" value="Sim">
+              <label for="treinamento-armas-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="treinamento-armas-nao" name="treinamento-armas" value="Não">
+              <label for="treinamento-armas-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+        <p>Você está servindo ou já serviu nas forças armadas?</p>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="serviu-forcas-armadas-sim" name="serviu-forcas-armadas" value="Sim">
+              <label for="serviu-forcas-armadas-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="serviu-forcas-armadas-nao" name="serviu-forcas-armadas" value="Não">
+              <label for="serviu-forcas-armadas-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <p>Em caso afirmativo, forneça as seguintes informações:</p>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>País de serviços:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Patente de serviços:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Classificação militar:</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Especialidade militar:</p>
+            <input type="text" required>
+          </div>
+        </div>
+        <div class="question-inline">
+          <div class="input-container">
+            <p>Data do serviço de (aaaa-mm-dd):</p>
+            <input type="text" required>
+          </div>
+          <div class="input-container">
+            <p>Data do serviço para (aaaa-mm-dd)</p>
+            <input type="text" required>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">8.9 Você serviu ou participou de qualquer organização paramilitar, unidades civis armadas, forças de guerrilha ou organizações armadas, ou foi seu membro?</h6>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="serviu-organizacao-paramilitar-sim" name="serviu-organizacao-paramilitar" value="Sim">
+              <label for="serviu-organizacao-paramilitar-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="serviu-organizacao-paramilitar-nao" name="serviu-organizacao-paramilitar" value="Não">
+              <label for="serviu-organizacao-paramilitar-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">8.10 Você pertenceu, contribuiu ou trabalhou para algum Sim Não profissional, organizações sociais ou de caridade?</h6>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="contribuiu-organizacao-caridade-sim" name="contribuiu-organizacao-caridade" value="Sim">
+              <label for="contribuiu-organizacao-caridade-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="contribuiu-organizacao-caridade-nao" name="contribuiu-organizacao-caridade" value="Não">
+              <label for="contribuiu-organizacao-caridade-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+      </div>
+      <div class="question">
+        <h6 class="title">8.11 Há mais alguma coisa que você deseja declarar?</h6>
+        <div class="input-container">
+          <div class="input-container radio-buttons">
+            <div class="option">
+              <input type="radio" id="mais-declarar-sim" name="mais-declarar" value="Sim">
+              <label for="mais-declarar-sim" class="custom-radio"></label>
+              <span>Sim</span>
+            </div>
+            <div class="option">
+              <input type="radio" id="mais-declarar-nao" name="mais-declarar" value="Não">
+              <label for="mais-declarar-nao" class="custom-radio"></label>
+              <span>Não</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <p>Se sim, por favor especifique:</p>
+          <input type="text" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="Enviar">
+    </div>
+  </form>
+
+  <script>
+    let photo = document.getElementById('picture-img');
+    let file = document.getElementById('input-picture');
+
+    photo.addEventListener('click', () => {
+      file.click();
+    })
+
+    file.addEventListener('change', () => {
+      console.log(1)
+      if(file.files.length <= 0 ) {
+        return;
+      }
+
+      let reader = new FileReader();
+
+      reader.onload = () => {
+        photo.src = reader.result;
+      }
+
+      reader.readAsDataURL(file.files[0]);
+    });
+  </script>
+</body>
+
+</html>
